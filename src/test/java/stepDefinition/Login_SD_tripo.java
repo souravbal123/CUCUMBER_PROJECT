@@ -23,7 +23,7 @@ public class Login_SD_tripo {
 		driver = new ChromeDriver();
 		driver.get("https://www.tripodeal.com/portal/login.php");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
 	}
 
 	@When("user enters valid email")
@@ -48,6 +48,12 @@ public class Login_SD_tripo {
 		String exp_str = "hibibhu123@gmail.com";
 		Assert.assertEquals(act_str, exp_str);
 		driver.close();
+	}
+
+	@When("user enters invalid email")
+	public void user_enters_invalid_email() {
+		driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("hibibhu1234@gmail.com");
+
 	}
 
 	@When("user enters invalid password")

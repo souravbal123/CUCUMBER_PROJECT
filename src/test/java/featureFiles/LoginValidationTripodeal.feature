@@ -15,3 +15,17 @@ Feature: To Validate The Login Scenario for tripodeal.com
     And user enters invalid password
     And user clicks on Login button
     Then invalid credientials error message will be displayed
+ 
+  Scenario: Invalid username and valid password
+    Given Login page opened
+    When user enters invalid email
+    And user enters valid password
+    And user clicks on Login button
+    Then invalid credientials error message will be displayed
+    
+      Scenario: Invalid username and invalid password
+    Given Login page opened
+    When user enters invalid email
+    And user enters invalid password
+    And user clicks on Login button
+    Then invalid credientials error message will be displayed
